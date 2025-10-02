@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 import clsx from 'clsx';
 
@@ -37,7 +37,7 @@ type ButtonProps = (
     }
 ) &
   (
-    | Omit<ComponentPropsWithoutRef<typeof Link>, 'color'>
+    | Omit<ComponentPropsWithoutRef<typeof NextLink>, 'color'>
     | (Omit<ComponentPropsWithoutRef<'button'>, 'color'> & {
         href?: undefined;
       })
@@ -60,6 +60,6 @@ export function Button({ className, ...props }: ButtonProps) {
   return typeof props.href === 'undefined' ? (
     <button className={className} {...props} />
   ) : (
-    <Link className={className} {...props} />
+    <NextLink className={className} {...props} />
   );
 }
