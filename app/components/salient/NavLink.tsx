@@ -1,11 +1,14 @@
 import Link from 'next/link';
 
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+
 export function NavLink({
   href,
   children,
 }: {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <Link
