@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'app/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci
+        run: npm install --legacy-peer-deps
         
       - name: Type checking
         working-directory: ./app
@@ -60,11 +60,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'app/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci
+        run: npm install --legacy-peer-deps
         
       - name: Run security audit
         working-directory: ./app
@@ -92,11 +92,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'app/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci
+        run: npm install --legacy-peer-deps
         
       - name: Run tests (if available)
         working-directory: ./app
@@ -131,11 +131,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'app/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci
+        run: npm install --legacy-peer-deps
         
       - name: Build for preview
         working-directory: ./app
@@ -166,11 +166,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'app/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci
+        run: npm install --legacy-peer-deps
         
       - name: Build for production
         working-directory: ./app
