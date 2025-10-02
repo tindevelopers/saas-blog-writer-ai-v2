@@ -1,7 +1,6 @@
+import Image from 'next/image';
 
-import Image from 'next/image'
-
-import { Container } from './Container'
+import { Container } from './Container';
 
 const faqs = [
   [
@@ -52,10 +51,10 @@ const faqs = [
     {
       question: 'Do you offer refunds?',
       answer:
-        'We offer a 30-day money-back guarantee. If you\'re not satisfied with BlogAI for any reason, contact us within 30 days of your purchase for a full refund.',
+        "We offer a 30-day money-back guarantee. If you're not satisfied with BlogAI for any reason, contact us within 30 days of your purchase for a full refund.",
     },
   ],
-]
+];
 
 export function Faqs() {
   return (
@@ -81,8 +80,8 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            If you can't find what you're looking for, email our support team and 
-            we'll get back to you within 24 hours.
+            If you can't find what you're looking for, email our support team
+            and we'll get back to you within 24 hours.
           </p>
         </div>
         <ul
@@ -106,5 +105,5 @@ export function Faqs() {
         </ul>
       </Container>
     </section>
-  )
+  );
 }

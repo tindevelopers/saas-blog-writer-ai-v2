@@ -1,8 +1,7 @@
+import Image from 'next/image';
 
-import Image from 'next/image'
-
-import { Button } from './Button'
-import { Container } from './Container'
+import { Button } from './Button';
+import { Container } from './Container';
 
 export function Hero() {
   return (
@@ -23,15 +22,13 @@ export function Hero() {
         for content creators.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Create engaging, SEO-optimized blog posts in minutes with our AI-powered writing assistant. 
-        From brainstorming to publishing, we've got you covered.
+        Create engaging, SEO-optimized blog posts in minutes with our AI-powered
+        writing assistant. From brainstorming to publishing, we've got you
+        covered.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/register">Start writing for free</Button>
-        <Button
-          href="#demo"
-          variant="outline"
-        >
+        <Button href="#demo" variant="outline">
           <svg
             aria-hidden="true"
             className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"
@@ -63,5 +60,5 @@ export function Hero() {
         </div>
       </div>
     </Container>
-  )
+  );
 }

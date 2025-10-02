@@ -1,11 +1,13 @@
-
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 120 40" {...props}>
       <defs>
         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style={{ stopColor: '#2563EB', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#7C3AED', stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: '#7C3AED', stopOpacity: 1 }}
+          />
         </linearGradient>
       </defs>
       <path
@@ -25,5 +27,5 @@ export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
         BlogAI
       </text>
     </svg>
-  )
+  );
 }

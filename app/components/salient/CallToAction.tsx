@@ -1,8 +1,7 @@
+import Image from 'next/image';
 
-import Image from 'next/image'
-
-import { Button } from './Button'
-import { Container } from './Container'
+import { Button } from './Button';
+import { Container } from './Container';
 
 export function CallToAction() {
   return (
@@ -24,7 +23,7 @@ export function CallToAction() {
             Start writing better content today
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            Join thousands of content creators who are already using BlogAI to 
+            Join thousands of content creators who are already using BlogAI to
             create amazing content. Start your free trial today.
           </p>
           <Button href="/register" color="white" className="mt-10">
@@ -33,5 +32,5 @@ export function CallToAction() {
         </div>
       </Container>
     </section>
-  )
+  );
 }

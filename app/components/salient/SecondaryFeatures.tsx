@@ -1,19 +1,18 @@
+'use client';
 
-'use client'
+import { useId } from 'react';
+import Image, { type ImageProps } from 'next/image';
+import { Tab } from '@headlessui/react';
+import clsx from 'clsx';
 
-import { useId } from 'react'
-import Image, { type ImageProps } from 'next/image'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
-
-import { Container } from './Container'
+import { Container } from './Container';
 
 interface Feature {
-  name: React.ReactNode
-  summary: string
-  description: string
-  image: string
-  icon: React.ComponentType
+  name: React.ReactNode;
+  summary: string;
+  description: string;
+  image: string;
+  icon: React.ComponentType;
 }
 
 const features: Array<Feature> = [
@@ -24,7 +23,7 @@ const features: Array<Feature> = [
       'Organize your content strategy with our visual calendar. Schedule posts, track deadlines, and never miss a publishing date.',
     image: '/images/screenshots/profit-loss.png',
     icon: function CalendarIcon() {
-      let id = useId()
+      const id = useId();
       return (
         <>
           <defs>
@@ -48,7 +47,7 @@ const features: Array<Feature> = [
             strokeLinejoin="round"
           />
         </>
-      )
+      );
     },
   },
   {
@@ -76,7 +75,7 @@ const features: Array<Feature> = [
             fill="#fff"
           />
         </>
-      )
+      );
     },
   },
   {
@@ -99,10 +98,10 @@ const features: Array<Feature> = [
             fill="#fff"
           />
         </>
-      )
+      );
     },
   },
-]
+];
 
 function Feature({
   feature,
@@ -110,8 +109,8 @@ function Feature({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'div'> & {
-  feature: Feature
-  isActive: boolean
+  feature: Feature;
+  isActive: boolean;
 }) {
   return (
     <div
@@ -121,7 +120,7 @@ function Feature({
       <div
         className={clsx(
           'w-9 rounded-lg',
-          isActive ? 'bg-blue-600' : 'bg-slate-500',
+          isActive ? 'bg-blue-600' : 'bg-slate-500'
         )}
       >
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
@@ -131,7 +130,7 @@ function Feature({
       <h3
         className={clsx(
           'mt-6 text-sm font-medium',
-          isActive ? 'text-blue-600' : 'text-slate-600',
+          isActive ? 'text-blue-600' : 'text-slate-600'
         )}
       >
         {feature.name}
@@ -141,13 +140,13 @@ function Feature({
       </p>
       <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
     </div>
-  )
+  );
 }
 
 function FeaturesMobile() {
   return (
     <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
-      {features.map((feature) => (
+      {features.map(feature => (
         <div key={feature.summary}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
@@ -166,7 +165,7 @@ function FeaturesMobile() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 function FeaturesDesktop() {
@@ -200,7 +199,7 @@ function FeaturesDesktop() {
                   key={feature.summary}
                   className={clsx(
                     'px-5 transition duration-500 ease-in-out focus:outline-none',
-                    featureIndex !== selectedIndex && 'opacity-60',
+                    featureIndex !== selectedIndex && 'opacity-60'
                   )}
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
@@ -223,7 +222,7 @@ function FeaturesDesktop() {
         </>
       )}
     </Tab.Group>
-  )
+  );
 }
 
 export function SecondaryFeatures() {
@@ -239,7 +238,7 @@ export function SecondaryFeatures() {
             Streamline your content workflow.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Powerful tools designed to help you create better content faster, 
+            Powerful tools designed to help you create better content faster,
             collaborate with your team, and grow your audience.
           </p>
         </div>
@@ -247,5 +246,5 @@ export function SecondaryFeatures() {
         <FeaturesDesktop />
       </Container>
     </section>
-  )
+  );
 }
