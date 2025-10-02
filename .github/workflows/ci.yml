@@ -23,19 +23,15 @@ jobs:
           cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
-        working-directory: ./app
         run: npm install --legacy-peer-deps
         
       - name: Type checking
-        working-directory: ./app
         run: npm run type-check
         
       - name: ESLint
-        working-directory: ./app
         run: npm run lint
         
       - name: Build application
-        working-directory: ./app
         run: npm run build
         
       - name: Check for build artifacts
@@ -63,11 +59,9 @@ jobs:
           cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
-        working-directory: ./app
         run: npm install --legacy-peer-deps
         
       - name: Run security audit
-        working-directory: ./app
         run: npm audit --audit-level moderate || echo "⚠️ Security audit found vulnerabilities - continuing build"
         continue-on-error: true
         
@@ -96,11 +90,9 @@ jobs:
           cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
-        working-directory: ./app
         run: npm install --legacy-peer-deps
         
       - name: Run tests (if available)
-        working-directory: ./app
         run: |
           if npm test --passWithNoTests 2>/dev/null; then
             echo "✅ Tests passed"
@@ -135,11 +127,9 @@ jobs:
           cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
-        working-directory: ./app
         run: npm install --legacy-peer-deps
         
       - name: Build for preview
-        working-directory: ./app
         run: npm run build
         
       - name: Deploy to preview environment
@@ -170,11 +160,9 @@ jobs:
           cache-dependency-path: 'package-lock.json'
           
       - name: Install dependencies
-        working-directory: ./app
         run: npm install --legacy-peer-deps
         
       - name: Build for production
-        working-directory: ./app
         run: npm run build
         
       - name: Deploy to production
